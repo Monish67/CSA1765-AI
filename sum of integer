@@ -1,0 +1,7 @@
+% Base case: the sum of an empty list is 0.
+sum_list([], 0).
+
+% Recursive case: add the head of the list to the sum of the rest of the list.
+sum_list([Head|Tail], Sum) :-
+    sum_list(Tail, RestSum),    % Recursively calculate the sum of the tail.
+    Sum is Head + RestSum.      % Add the head to the sum of the tail.
